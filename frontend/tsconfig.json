@@ -3,8 +3,9 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    
     "moduleResolution": "node16",
+    "module": "Node16",
+    
     
     // ...
     "baseUrl": ".",
