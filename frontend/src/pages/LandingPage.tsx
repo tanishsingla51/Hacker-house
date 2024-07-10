@@ -1,6 +1,6 @@
 
-import { Center } from '../comp/Center';
-import { Navbar } from '../comp/Navbar';
+import { Center } from '../comp/Center.js';
+import { Navbar } from '../comp/Navbar.js';
 
 const LandingPage = () => {
   return (

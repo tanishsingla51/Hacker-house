@@ -1,6 +1,6 @@
 
-import LandingPage from './pages/LandingPage'
-import Dashboard from './pages/Dashboard';
+import LandingPage from './pages/LandingPage.js'
+import Dashboard from './pages/Dashboard.js';
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
