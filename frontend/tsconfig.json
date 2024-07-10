@@ -4,7 +4,6 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "moduleResolution": "node16",
-    "module": "Node16",
     
     
     // ...
