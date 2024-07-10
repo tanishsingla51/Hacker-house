@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node16",
     
     // ...
     "baseUrl": ".",
