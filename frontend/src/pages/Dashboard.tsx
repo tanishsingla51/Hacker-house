@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Button } from "@/components/ui/button";
+import React, { useState } from 'react';
+import { Button } from "../components/ui/button.js";
 import { ConnectButton } from "@arweave-wallet-kit/react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -9,16 +9,16 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu.js";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum, faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
-import WeaveXLogo from './logo'; // Import the logo
+import WeaveXLogo from './logo.js'; // Import the logo
 
 const Dashboard = () => {
   const [input, setInput] = useState<string>("");
   const [output, setOutput] = useState<string>("");
-  const [selectedToken, setSelectedToken] = useState<string>("");
+  const [selectedToken, setSelectedToken] = useState<string>(""); // Update the initial state of output to an empty string
   const navigate = useNavigate();
 
   const swap = (e) => {
@@ -31,7 +31,8 @@ const Dashboard = () => {
     } else if (selectedToken === "USD") {
       conversionRate = 22.30;
     }
-    setOutput(conversionRate * input);
+    const inputValue = parseFloat(input); // Convert input value to a number
+    setOutput((conversionRate * inputValue).toString()); // Update setOutput to accept a string value
   };
 
   return (

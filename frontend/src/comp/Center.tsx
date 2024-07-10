@@ -1,5 +1,5 @@
-import { Button } from '../components/ui/button'; // Adjust path as per your file structure
-import WeaveXLogo from '../pages/logo'; // Adjust path as per your file structure
+import { Button } from '../components/ui/button.js'; // Adjust path as per your file structure
+import WeaveXLogo from '../pages/logo.js'; // Adjust path as per your file structure
 import { FaDiscord } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 
@@ -8,7 +8,7 @@ export const Center = () => {
     <div className="bg-gray-900 min-h-screen text-white flex flex-col justify-center items-center p-8">
       <div className="text-center max-w-3xl mb-12">
         <div className="flex flex-col items-center mb-8">
-          <WeaveXLogo className="w-32 h-32 mb-4" />
+          <WeaveXLogo />
           <h1 className="text-6xl font-bold font-serif mb-2">Welcome to</h1>
           <h1 className="text-6xl font-bold font-serif text-purple-400 mb-4">WeaveX</h1>
         </div>

@@ -1,8 +1,8 @@
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../components/ui/button.js";
 import { ConnectButton, useConnection } from "@arweave-wallet-kit/react";
 import { useNavigate } from "react-router-dom";
-import WeaveXLogo from '../pages/logo'; // Adjust the path to your logo
+import WeaveXLogo from '../pages/logo.js'; // Adjust the path to your logo
 
 export const Navbar = () => {
   const { connected } = useConnection();

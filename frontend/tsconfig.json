@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
+    "moduleResolution": "node16",
     
     // ...
     "baseUrl": ".",
