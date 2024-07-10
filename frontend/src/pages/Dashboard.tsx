@@ -9,16 +9,16 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "../components/ui/dropdown-menu";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEthereum, faBitcoin } from '@fortawesome/free-brands-svg-icons';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import WeaveXLogo from './logo'; // Import the logo
 
 const Dashboard = () => {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [selectedToken, setSelectedToken] = useState("");
+  const [input, setInput] = useState<string>("");
+  const [output, setOutput] = useState<string>("");
+  const [selectedToken, setSelectedToken] = useState<string>("");
   const navigate = useNavigate();
 
   const swap = (e) => {

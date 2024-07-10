@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
-import App from './App'
+import App from './App.tsx';
 import './index.css'
 import ArConnectStrategy from "@arweave-wallet-kit/arconnect-strategy";
 import { ArweaveWalletKit } from "@arweave-wallet-kit/react";

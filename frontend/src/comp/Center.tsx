@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'; // Adjust path as per your file structure
+import { Button } from '../components/ui/button'; // Adjust path as per your file structure
 import WeaveXLogo from '../pages/logo'; // Adjust path as per your file structure
 import { FaDiscord } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
