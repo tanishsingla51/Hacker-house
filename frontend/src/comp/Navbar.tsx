@@ -1,67 +1,45 @@
 import * as React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Icons } from "@/components/icons";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
+import { ConnectButton, useConnection } from "@arweave-wallet-kit/react";
+import { useNavigate } from "react-router-dom";
+import WeaveXLogo from '../pages/logo'; // Adjust the path to your logo
 
 export const Navbar = () => {
+  const { connected } = useConnection();
+  const navigate = useNavigate();
+
+  const handleNavigateToDashboard = () => {
+    navigate("/dashboard/"); // Navigate to '/dashboard' route
+  };
+
   return (
-    <div className="fixed top-0 left-0 w-full flex items-center bg-black text-white p-6 z-50">
-      <div>
-        <img
-          src="https://miro.medium.com/v2/resize:fit:1400/1*cu-UNKqSgFfRfFvK0rpGYA.jpeg"
-          className="w-36 h-24 mr-8"
-          alt="Arweave AO"
-        />
+    <header className="fixed top-0 left-0 w-full flex items-center bg-black p-6 z-50 shadow-lg">
+      <div className="flex items-center">
+        <div className="flex items-center justify-center mr-8">
+          <WeaveXLogo /> {/* Include the WeaveX logo */}
+          <div className="ml-2">
+            <div className="text-2xl font-semibold text-white">WeaveX</div>
+            <div className="text-xs font-medium text-purple-300">Decentralized Solutions</div>
+          </div>
+        </div>
+        <nav className="flex space-x-4">
+          <Button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-2 px-4 border border-purple-700 hover:border-transparent rounded">Swap</Button>
+          <Button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-2 px-4 border border-purple-700 hover:border-transparent rounded">Stake</Button>
+          <Button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-2 px-4 border border-purple-700 hover:border-transparent rounded">Bridges</Button>
+        </nav>
+        <Button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-2 px-4 border border-purple-700 hover:border-transparent rounded ml-[915px]">Community</Button>
       </div>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-black text-white">Learn</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink className="bg-black text-white">Link</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-black text-white">Opportunities</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink className="bg-black text-white">Link</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-black text-white">Communities</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink className="bg-black text-white">nbvhjvhjvhj</NavigationMenuLink>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <div className="ml-auto">
-        <Button className="bg-blue-500 text-white border-white hover:bg-blue-700 px-6 py-2">
-          Sign in
-        </Button>
+      <div className='ml-auto'>
+        {connected ? (
+          <Button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-2 px-4 border border-purple-700 hover:border-transparent rounded" onClick={handleNavigateToDashboard}>Dashboard</Button>
+        ) : (
+          <div className="gap-10 p-9 my-18 flex flex-col justify-center items-center">
+            <ConnectButton accent="rgb(30,129,176)" />
+          </div>
+        )}
       </div>
-    </div>
+    </header>
   );
 };
+
+export default Navbar;

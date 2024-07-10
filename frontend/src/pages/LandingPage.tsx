@@ -1,27 +1,19 @@
-import React from 'react'
-import { Center } from '../comp/Center'
-import { Testemonials } from '../comp/Testemonials'
-import { TestContent } from '../comp/TestContent'
-import { Navbar } from '../comp/Navbar'
 
+import React = require('react');
+import { Center } from '../comp/Center';
+import { Navbar } from '../comp/Navbar';
 
- const LandingPage = () => {
+const LandingPage = () => {
   return (
-      <div>
-           <div className="pb-4 pl-8 pt-6 w-full fixed absolute">
-          <Navbar />
-        </div>
-        <div  className="flex justify-center mt-56">
+    <div className='bg-gray-900 min-h-screen text-white'>
+      <div className="fixed top-0 left-0 w-full">
+        <Navbar />
+      </div>
+      <div className="flex justify-center items-center h-full">
         <Center />
-        </div>
-        <div className="flex justify-center mt-64">
-          <Testemonials  /> 
-        </div>
-        <div >
-        <TestContent />
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

@@ -1,6 +1,6 @@
 
 import LandingPage from './pages/LandingPage'
-import Pages from './pages/Pages';
+import Dashboard from './pages/Dashboard';
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          <Route path='/courses' element={<Pages />} />
+          <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
     </div> 
