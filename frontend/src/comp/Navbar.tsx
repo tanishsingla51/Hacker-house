@@ -1,4 +1,4 @@
-import * as React from "react";
+
 import { Button } from "@/components/ui/button";
 import { ConnectButton, useConnection } from "@arweave-wallet-kit/react";
 import { useNavigate } from "react-router-dom";

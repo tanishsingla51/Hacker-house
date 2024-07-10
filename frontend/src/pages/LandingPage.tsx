@@ -1,5 +1,4 @@
 
-import React = require('react');
 import { Center } from '../comp/Center';
 import { Navbar } from '../comp/Navbar';
 
