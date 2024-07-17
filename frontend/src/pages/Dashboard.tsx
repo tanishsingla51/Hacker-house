@@ -21,7 +21,7 @@ const Dashboard = () => {
   const [selectedToken, setSelectedToken] = useState<string>(""); // Update the initial state of output to an empty string
   const navigate = useNavigate();
 
-  const swap = (e) => {
+  const swap = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     let conversionRate = 0;
     if (selectedToken === "ETH") {
